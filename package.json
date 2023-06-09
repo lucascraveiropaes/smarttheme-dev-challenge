@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "push": "shopify theme push",
+    "push": "shopify theme push --path=./theme",
     "pull": "shopify theme pull",
-    "dev": "shopify theme serve"
+    "dev": "shopify theme dev --path=./theme"
   },
   "author": "",
   "license": "ISC"
