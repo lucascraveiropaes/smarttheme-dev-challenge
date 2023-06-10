@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "style": "tailwindcss -i ./theme/assets/styles.css -o ./theme/assets/styles.out.css",
+    "style": "tailwindcss -i ./theme/assets/styles.css -o ./theme/assets/styles.out.css --watch",
     "build": "esbuild src/index.tsx --tsconfig=tsconfig.preact.json --bundle --minify --sourcemap --outfile=theme/assets/index.js",
     "push": "npm run style && npm run build && shopify theme push --path=./theme",
     "pull": "shopify theme pull",
-    "dev": "npm run style --watch & shopify theme dev --path=./theme --store=https://dev-challenge.myshopify.com"
+    "dev": "shopify theme dev --path=./theme --store=dev-challenge.myshopify.com"
   },
   "author": "",
   "license": "ISC",
