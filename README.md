@@ -10,3 +10,10 @@ Note: you could run in one single line command (```npm run dev & npm run build``
 | ```npm run build``` | Start Local Development Server |
 | ```npm run push```  | Push Theme to Shopify Server |
 | ```npm run pull```  | Pull Theme from Shopify Server |
+
+
+This is how the theme should look on editor:
+
+![docs/example-1.png](Example 1)
+
+![docs/example-2.png](Example 2)
