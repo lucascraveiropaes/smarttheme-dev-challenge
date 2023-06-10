@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "style": "tailwindcss -i ./theme/assets/styles.css -o ./theme/assets/styles.out.css --watch",
-    "build": "esbuild src/index.tsx --tsconfig=tsconfig.preact.json --bundle --minify --sourcemap --outfile=theme/assets/index.js",
-    "push": "npm run style && npm run build && shopify theme push --path=./theme",
+    "preact": "esbuild src/index.tsx --tsconfig=tsconfig.preact.json --bundle --minify --sourcemap --outfile=theme/assets/index.js",
+    "content": "ts-node ./tabs/build.ts",
+    "push": "shopify theme push --path=./theme",
     "pull": "shopify theme pull",
     "dev": "shopify theme dev --path=./theme --store=dev-challenge.myshopify.com"
   },
