@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "module": "umd",
+      "outDir": "theme/assets",
+      "jsx": "react-jsx",
+      "jsxImportSource": "preact",
+      "strict": true,
+      "moduleResolution": "node"
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+  }
+  
