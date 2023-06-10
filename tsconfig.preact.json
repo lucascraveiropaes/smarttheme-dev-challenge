@@ -8,7 +8,7 @@
       "moduleResolution": "node",
       "lib": ["es2021"]
     },
-    "include": ["src/**/*"],
+    "include": ["tabs/*"],
     "exclude": ["node_modules"]
   }
   
