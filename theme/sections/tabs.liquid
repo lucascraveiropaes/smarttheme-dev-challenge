@@ -1,53 +1,25 @@
 
-<div class="tabs">
-  <header class="grid grid-flow-col auto-cols-fr divide-x shadow-sm">
-    {% for block in section.blocks %}
-      <button
-        class="tab-button py-3 px-4 text-uppercase font-semibold | hover:bg-slate-100"
-        data-tab="{{ block.id }}"
-        for="{{ block.id }}">
-        {{ block.settings.title }}
-      </button>
-    {% endfor %}
-  </header>
+{% assign blocks = '' | split: '' %}
+{% for block in section.blocks %}
+    {% capture item %}
+        {   'id': '{{ block.id }}',
+            'title': '{{ block.settings.title }}',
+            'content': '{{ block.settings.content }}',
+            'background': '{{ block.settings.background }}',
+            'color': '{{ block.settings.color }}'
+        }%
+    {% endcapture %}
+    {% assign item = item | split: ';' %}
+    {% assign blocks = blocks | concat: item %}
+{% endfor %}
 
-  {% for block in section.blocks %}
-    <div class="tab-content content p-2 hidden" id="{{ block.id }}">
-      {{ block.settings.content }}
-    </div>
-  {% endfor %}
-</div>
+<div
+    id="tabs"
+    data-blocks="{{ blocks }}"
+></div>
 
-<script defer>
-(function() {
-    const buttons = document.querySelectorAll(".tab-button");
-    const contents = document.querySelectorAll(".tab-content");
-    const [defaulClass] = buttons.item(0).className.split(" | ");
-    const ACTIVE = defaulClass + " text-white bg-teal-300 border-teal-300 hover:bg-teal-400 hover:border-teal-400";
+<script src="{{ "index.js" | asset_url }}" defer></script>
 
-    buttons.item(0).className = ACTIVE;
-    contents.item(0).classList.remove("hidden");
-
-    buttons.forEach(button => {
-        button.addEventListener("click", function() {
-            const tabId = this.dataset.tab;
-
-            contents.forEach(content => {
-            if (content.id === tabId)
-                return content.classList.remove("hidden");
-
-            return content.classList.add("hidden");
-            });
-
-            buttons.forEach(item => {
-            item.className = defaulClass;
-            });
-
-            this.className = ACTIVE;
-        });
-    });
-})();
-</script>
 
 {% schema %}
 {
@@ -69,6 +41,18 @@
                     "id": "content",
                     "label": "Content",
                     "default": "Tab Content"
+                },
+                {
+                    "type": "color",
+                    "id": "background",
+                    "label": "Background Color",
+                    "default": "#000000"
+                },
+                {
+                    "type": "color",
+                    "id": "color",
+                    "label": "Text Color",
+                    "default": "#FFFFFF"
                 }
             ]
         }

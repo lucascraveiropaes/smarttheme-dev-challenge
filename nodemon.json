@@ -1,0 +1,6 @@
+{
+    "ext": ".liquid,.js,.css,.ts,.tsx",
+    "verbose": true,
+    "watch": ["tabs/", "theme/"],
+    "ignore": ["/theme/sections/*.liquid", "/theme/assets/"]
+}

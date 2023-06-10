@@ -1,5 +1,3 @@
-// schema.ts
-
 type InputType = "tab" | "textarea" | "checkbox" | "text" | "color";
 type BlockType = "tab";
 
@@ -39,6 +37,16 @@ export const sectionSchema: Section = {
             "id": "content",
             "label": "Content",
             "default": "Tab Content"
+        }, {
+            "type": "color",
+            "id": "background",
+            "label": "Background Color",
+            "default": "#000000"
+        }, {
+            "type": "color",
+            "id": "color",
+            "label": "Text Color",
+            "default": "#FFFFFF"
         }]
     }]
 };
