@@ -14,6 +14,6 @@ Note: you could run in one single line command (```npm run dev & npm run build``
 
 This is how the theme should look on editor:
 
-![docs/example-1.png](Example 1)
+![https://github.com/lucascraveiropaes/smarttheme-dev-challenge/blob/main/docs/example-1.png?raw=true](Example 1)
 
-![docs/example-2.png](Example 2)
+![https://github.com/lucascraveiropaes/smarttheme-dev-challenge/blob/main/docs/example-2.png?raw=true](Example 2)
